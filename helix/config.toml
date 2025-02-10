@@ -1,0 +1,97 @@
+theme = "doom_acario_dark"
+
+[keys.normal]
+j = "move_char_left"
+k = "move_visual_line_down"
+l = "move_visual_line_up"
+";" = "move_char_right"
+"ô" = "move_char_right"
+"A-," = "goto_previous_buffer"
+"A-." = "goto_next_buffer"
+"A-w" = ":buffer-close"
+"A-/" = "repeat_last_motion"
+"C-y" = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
+# ~/.config/helix/config.toml
+
+#[keys.normal.C-y]
+## Open the file(s) in the current window
+#"y" = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
+## Open the file(s) in a vertical pane
+#"v" = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh vsplit"
+## Open the file(s) in a horizontal pane
+#"h" = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh hsplit"
+
+[keys.normal.space]
+u = ":w!"
+i = ":q!"
+o = ":wq!"
+
+[keys.select]
+j = "move_char_left"
+k = "move_visual_line_down"
+l = "move_visual_line_up"
+";" = "move_char_right"
+"ô" = "move_char_right"
+
+[editor]
+bufferline = "multiple"
+line-number = "relative"
+mouse = true
+cursorline = true
+cursorcolumn = true
+auto-completion = true
+preview-completion-insert = true
+completion-replace = false
+color-modes = true
+auto-pairs = true
+true-color = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = ""
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+enable = true
+display-messages = true
+auto-signature-help = true
+display-inlay-hints = false
+snippets = true
+goto-reference-include-declaration = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+follow-symlinks = true
+deduplicate-links = true
+parents = true
+ignore = true
+git-ignore = true
+git-global = true
+git-exclude = true
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+[editor.whitespace]
+render = "none"
+
+[editor.indent-guides]
+render = true
+character = "|"
+skip-levels = 0
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = ""  # set wrap-indicator to "" to hide it
